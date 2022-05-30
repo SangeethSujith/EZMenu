@@ -33,7 +33,7 @@ const Login = ({navigation}) => {
         secureTextEntry={true}
         placeholderTextColor="rgba(130,139,154,0.5)"
         />
-        <TouchableOpacity style={Design.btn}>
+        <TouchableOpacity style={Design.btn} onPress={() => navigation.navigate('Seats')}>
             <Text style={Design.btntxt}>Login</Text>
         </TouchableOpacity>
       </View>
