@@ -68,6 +68,30 @@ const Design = StyleSheet.create({
     color:'#fff',
     fontSize:17,
   },
+  //Seats.js Design
+  container2:{
+    flex:1,
+    alignItems:'center',
+    paddingTop:45,
+  },
+  hotelname1:{
+    fontSize: 20,
+    fontFamily: 'poppinsmedium',
+    color: '#000',
+    marginBottom:25,
+  },
+  tableview:{
+    flexDirection:'row',
+    marginVertical:5,
+    marginHorizontal:5,
+  },
+  singletable:{
+    alignItems:'center',
+  },
+  tableimg:{
+    height:70,
+    width:90,
+  },
 });
 
 export default Design;
