@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import {Text, View, StatusBar, SafeAreaView, TextInput} from 'react-native';
+import {Text, View, StatusBar, SafeAreaView, TextInput, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Design from '../styles/Design';
 const Login = ({navigation}) => {
@@ -20,8 +20,22 @@ const Login = ({navigation}) => {
           placeholderTextColor="rgba(130,139,154,0.5)"
         />
       </View>
+      <View><Text style={Design.or}>OR</Text></View>
       <View style={Design.bottomhalf}>
-        <Text style={Design.or}>OR</Text>
+        <Text style={Design.h2}>User name</Text>
+        <TextInput style={Design.input}
+        placeholder="User name"
+        placeholderTextColor="rgba(130,139,154,0.5)"
+        />
+         <Text style={Design.h2}>Password</Text>
+        <TextInput style={Design.input}
+        placeholder="Password"
+        secureTextEntry={true}
+        placeholderTextColor="rgba(130,139,154,0.5)"
+        />
+        <TouchableOpacity style={Design.btn}>
+            <Text style={Design.btntxt}>Login</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

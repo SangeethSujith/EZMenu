@@ -7,16 +7,16 @@ const Design = StyleSheet.create({
     justifyContent: 'center',
   },
   tophalf: {
-    height: windowheight / 2,
-    paddingTop: 30,
+    height: windowheight / 3,
     paddingHorizontal:30,
     width: '100%',
     justifyContent:'center',
   },
   bottomhalf: {
-    height: windowheight / 2,
+    height: windowheight / 3,
     width: '100%',
-    alignItems: 'center',
+    justifyContent:'center',
+    paddingHorizontal:30,
   },
   h1: {
     fontSize: 30,
@@ -32,6 +32,12 @@ const Design = StyleSheet.create({
     marginLeft:28,
     marginBottom:10,
   },
+  or:{
+    fontFamily:'poppinsmedium',
+    color:'#000',
+    fontSize:17,
+    alignSelf:'center',
+  },
   input: {
     borderRadius: 12,
     borderWidth: 1,
@@ -45,6 +51,22 @@ const Design = StyleSheet.create({
     fontFamily:'poppinsmedium',
     alignSelf:'center',
     lineHeight:20,
+    marginBottom:6,
+  },
+  btn:{
+    width:'90%',
+    backgroundColor:'#D91C10',
+    alignItems:'center',
+    alignSelf:'center',
+    borderRadius:12,
+    height:56,
+    marginTop:30,
+    justifyContent:'center',
+  },
+  btntxt:{
+    fontFamily:'poppinsregular',
+    color:'#fff',
+    fontSize:17,
   },
 });
 
