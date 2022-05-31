@@ -32,6 +32,16 @@ const Design = StyleSheet.create({
     marginLeft:28,
     marginBottom:10,
   },
+  regulartext:{
+fontFamily:'poppinsregular',
+fontSize:15,
+color:'#000',
+  },
+  h2c:{
+    fontFamily:'poppinsregular',
+    color:'#000',
+    fontSize:17,
+  },
   or:{
     fontFamily:'poppinsmedium',
     color:'#000',

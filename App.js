@@ -3,6 +3,7 @@ import Login from './assets/screens/Login';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Seats from './assets/screens/Seats';
+import Bookfood from './assets/screens/Bookfood';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,11 @@ const App = () => {
         <Stack.Screen
           name="Seats"
           component={Seats}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Bookfood"
+          component={Bookfood}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
