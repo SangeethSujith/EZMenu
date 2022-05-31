@@ -17,7 +17,7 @@ const Seats = ({navigation}) => {
         <Text style={Design.regulartext}>12:00PM</Text>
         </View>
         </View>      
-<ScrollView>
+<ScrollView showsVerticalScrollIndicator={false}>
       <TouchableOpacity onPress={() => navigation.navigate('Bookfood')}>
       <View style={Design.tableview}>
           <View style={Design.singletable}>
