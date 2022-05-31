@@ -5,7 +5,7 @@ import Design from '../styles/Design'
 const Bookfood = () => {
   return (
     <View style={Design.container2}>
-      <Text style={Design.hotelname1}>Jumeirah Beach Hotel</Text>
+      <Text style={Design.hotelname1c}>Jumeirah Beach Hotel</Text>
       <Text style={Design.h2c}>Table 6</Text>
     </View>
   )

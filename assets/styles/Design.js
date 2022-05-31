@@ -90,6 +90,12 @@ color:'#000',
     color: '#000',
     marginBottom:25,
   },
+  hotelname1c:{
+    fontSize: 20,
+    fontFamily: 'poppinsmedium',
+    color: '#000',
+    marginBottom:5,
+  },
   tableview:{
     flexDirection:'row',
     marginVertical:5,
