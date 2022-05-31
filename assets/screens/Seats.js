@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import {Text, View,Image,TouchableOpacity} from 'react-native';
+import {Text, View,Image,TouchableOpacity,ScrollView} from 'react-native';
 import React from 'react';
 import Design from '../styles/Design';
 const Seats = ({navigation}) => {
@@ -7,7 +7,18 @@ const Seats = ({navigation}) => {
   return (
     <View style={Design.container2}>
       <Text style={Design.hotelname1}>Jumeirah Beach Hotel</Text>
-      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+    <View style={{flexDirection:'row',justifyContent:'space-between',width:'80%',marginBottom:5,}}>
+        <View>
+            <Text style={Design.regulartext}>Welcome,</Text>
+            <Text style={Design.h2c}>User</Text>
+        </View>
+        <View>
+        <Text style={Design.regulartext}>31-05-2022</Text>
+        <Text style={Design.regulartext}>12:00PM</Text>
+        </View>
+        </View>      
+<ScrollView>
+      <TouchableOpacity onPress={() => navigation.navigate('Bookfood')}>
       <View style={Design.tableview}>
           <View style={Design.singletable}>
           <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
@@ -107,6 +118,7 @@ const Seats = ({navigation}) => {
           </View>
       </View>
       </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 };
