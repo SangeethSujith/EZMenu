@@ -1,13 +1,22 @@
 /* eslint-disable prettier/prettier */
 import {Text, View,Image,TouchableOpacity,ScrollView} from 'react-native';
-import React from 'react';
+import React,{useState,useRef} from 'react';
 import Design from '../styles/Design';
+import { Picker } from '@react-native-picker/picker';
+import DropDownPicker from 'react-native-dropdown-picker';
+import { windowwidth } from '../styles/Dimentions';
 const Seats = ({navigation}) => {
-
+    const [selectedLanguage, setSelectedLanguage] = useState();
+    const [open, setOpen] = useState(false);
+    const [value, setValue] = useState(null);
+    const [items, setItems] = useState([
+      {label: 'Beach View', value: 'beach'},
+      {label: 'Sunset View', value: 'sun'},
+    ]);
   return (
     <View style={Design.container2}>
       <Text style={Design.hotelname1}>Jumeirah Beach Hotel</Text>
-    <View style={{flexDirection:'row',justifyContent:'space-between',width:'80%',marginBottom:5,}}>
+    <View style={{flexDirection:'row',justifyContent:'space-between',width:'80%',marginBottom:5}}>
         <View>
             <Text style={Design.regulartext}>Welcome,</Text>
             <Text style={Design.h2c}>User</Text>
@@ -16,7 +25,19 @@ const Seats = ({navigation}) => {
         <Text style={Design.regulartext}>31-05-2022</Text>
         <Text style={Design.regulartext}>12:00PM</Text>
         </View>
-        </View>      
+        </View>
+        <View style={{borderRadius:30,borderColor:'#D91C10',borderWidth:2,marginBottom:5,}}>
+        <Picker
+          //ref={pickerRef}
+          style={{width:windowwidth / 2}}
+          selectedValue={selectedLanguage}
+          onValueChange={(itemValue, itemIndex) =>
+          setSelectedLanguage(itemValue)
+      }>
+          <Picker.Item label="Beach View" value="beach" />
+          <Picker.Item label="Sunset View" value="sun" enabled/>
+      </Picker>
+      </View>
 <ScrollView showsVerticalScrollIndicator={false}>
       <TouchableOpacity onPress={() => navigation.navigate('Bookfood')}>
       <View style={Design.tableview}>
