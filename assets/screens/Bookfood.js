@@ -1,9 +1,13 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
 import {
   Text,
   View,
   TextInput,
   TouchableOpacity,
   ScrollView,
+  Image,
 } from 'react-native';
 import React from 'react';
 import Design from '../styles/Design';
@@ -32,7 +36,7 @@ const Bookfood = () => {
           <Text style={Design.h2c}>Snacks</Text>
         </TouchableOpacity>
       </View>
-      <TextInput style={Design.search} placeholder="Search Here"/>
+      <TextInput style={Design.search} placeholder="Search Here" />
       <View style={Design.listcontain}>
         <ScrollView>
           <View>
@@ -46,6 +50,15 @@ const Bookfood = () => {
             ))}
           </View>
         </ScrollView>
+        <View style={Design.orderbtn}>
+            <TouchableOpacity style={Design.orderbtnleft}>
+                <Text style={Design.ordertxt}>Add To Cart</Text>
+                <Image style={{height:28,width:28}} source={require('../images/cart.png')}/>
+            </TouchableOpacity>
+            <TouchableOpacity style={Design.orderbtnright}>
+                <Text style={Design.ordertxt}>View Cart</Text>
+            </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
