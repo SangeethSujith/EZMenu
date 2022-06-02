@@ -66,4 +66,22 @@ export const listdata = [
     price: '50',
     id: '11',
   },
+  {
+    image: require('../images/extra.png'),
+    title:'Juice',
+    price: '10',
+    id: '12',
+  },
+  {
+    image: require('../images/extra.png'),
+    title:'Fried Rice Egg',
+    price: '15',
+    id: '13',
+  },
+  {
+    image: require('../images/extra.png'),
+    title:'Fried Rice Vegetarian',
+    price: '15',
+    id: '14',
+  },
 ];
