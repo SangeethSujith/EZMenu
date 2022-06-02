@@ -108,6 +108,35 @@ color:'#000',
     height:70,
     width:90,
   },
+  search:{
+    width:'80%',
+    backgroundColor:'#EAEAEA',
+    height:50,
+    borderRadius:30,
+    marginBottom:15,
+    fontFamily:'poppinsregular',
+    color:'#000',
+    fontSize:17,
+    paddingHorizontal:25,
+
+  },
+  category:{
+      borderWidth:2,
+      borderColor:'#D91C10',
+      borderRadius:20,
+      alignItems:'center',
+      paddingHorizontal:20,
+      marginHorizontal:3,
+  },
+  listcontain:{
+    flex:1,
+    width:'100%',
+    backgroundColor:'#EAEAEA',
+    alignContent:'center',
+    borderTopEndRadius:30,
+    borderTopStartRadius:30,
+    paddingVertical:20,
+  },
 });
 
 export default Design;
