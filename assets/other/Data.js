@@ -42,4 +42,28 @@ export const listdata = [
     price: '15',
     id: '7',
   },
+  {
+    image: require('../images/extra.png'),
+    title:'Chicken Biriyani',
+    price: '25',
+    id: '8',
+  },
+  {
+    image: require('../images/extra.png'),
+    title:'Vegetarian',
+    price: '23',
+    id: '9',
+  },
+  {
+    image: require('../images/extra.png'),
+    title:'Pizza',
+    price: '30',
+    id: '10',
+  },
+  {
+    image: require('../images/extra.png'),
+    title:'KFC Family',
+    price: '50',
+    id: '11',
+  },
 ];
