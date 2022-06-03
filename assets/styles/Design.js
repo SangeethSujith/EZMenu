@@ -98,8 +98,7 @@ color:'#000',
   },
   tableview:{
     flexDirection:'row',
-    marginVertical:5,
-    marginHorizontal:5,
+    marginBottom:10,
   },
   singletable:{
     alignItems:'center',
@@ -107,6 +106,7 @@ color:'#000',
   tableimg:{
     height:70,
     width:90,
+    marginHorizontal:10,
   },
   search:{
     width:'80%',

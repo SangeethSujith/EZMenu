@@ -1,18 +1,11 @@
 /* eslint-disable prettier/prettier */
 import {Text, View,Image,TouchableOpacity,ScrollView} from 'react-native';
-import React,{useState,useRef} from 'react';
+import React,{useState} from 'react';
 import Design from '../styles/Design';
 import { Picker } from '@react-native-picker/picker';
-import DropDownPicker from 'react-native-dropdown-picker';
 import { windowwidth } from '../styles/Dimentions';
 const Seats = ({navigation}) => {
     const [selectedLanguage, setSelectedLanguage] = useState();
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState(null);
-    const [items, setItems] = useState([
-      {label: 'Beach View', value: 'beach'},
-      {label: 'Sunset View', value: 'sun'},
-    ]);
   return (
     <View style={Design.container2}>
       <Text style={Design.hotelname1}>Jumeirah Beach Hotel</Text>
@@ -39,7 +32,7 @@ const Seats = ({navigation}) => {
       </Picker>
       </View>
 <ScrollView showsVerticalScrollIndicator={false}>
-      <TouchableOpacity onPress={() => navigation.navigate('Bookfood')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Bookfood')} style={{paddingTop:15}}>
       <View style={Design.tableview}>
           <View style={Design.singletable}>
           <Image style={Design.tableimg} source={require('../images/tableo.png')}/>

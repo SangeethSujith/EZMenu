@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
 import {Image, View, Text, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 
@@ -31,7 +33,6 @@ const Listitems = ({image, title, price}) => {
                 borderColor: '#D91C10',
                 alignItems: 'center',
                 justifyContent:'center',
-                borderRadius:20,
               }}>
               <Text style={{fontFamily:'poppinsmedium',fontSize:18,color:'#000'}}>-</Text>
             </TouchableOpacity>
@@ -45,21 +46,20 @@ const Listitems = ({image, title, price}) => {
                 borderColor: '#D91C10',
                 alignItems: 'center',
                 justifyContent:'center',
-                borderRadius:20,
               }}>
               <Text style={{fontFamily:'poppinsmedium',fontSize:18,color:'#000'}}>+</Text>
             </TouchableOpacity>
           </View>
         </View>
       </View>
-      <View style={{alignItems:'center',}}>
+      <View style={{alignItems:'center'}}>
         <Text
           style={{
             fontWeight: 'bold',
             color: '#2A9A02',
             fontFamily: 'poppinsregular',
             fontSize: 15,
-            paddingBottom:9
+            paddingBottom:9,
           }}>
           AED {price}
         </Text>
