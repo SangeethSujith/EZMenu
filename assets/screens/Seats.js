@@ -1,12 +1,29 @@
 /* eslint-disable prettier/prettier */
 import {Text, View,Image,TouchableOpacity,ScrollView} from 'react-native';
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import Design from '../styles/Design';
 import { Picker } from '@react-native-picker/picker';
 import { windowwidth } from '../styles/Dimentions';
 const Seats = ({navigation}) => {
     const [selectedLanguage, setSelectedLanguage] = useState();
-  return (
+    const[currentTime,setCurrentTime]=useState('')
+    useEffect(()=>{
+        var hours=new Date().getHours()
+        var min=new Date().getMinutes()
+        setCurrentTime(
+            hours+':'+min
+        )
+    }, [])
+    const [currentDate, setCurrentDate]=useState('')
+    useEffect(()=>{
+        var date=new Date().getDate()
+        var month=new Date().getMonth()+1
+        var year=new Date().getFullYear()
+        setCurrentDate(
+            date+'-'+month+'-'+year
+        )
+    }, [])
+    return (
     <View style={Design.container2}>
       <Text style={Design.hotelname1}>Jumeirah Beach Hotel</Text>
     <View style={{flexDirection:'row',justifyContent:'space-between',width:'80%',marginBottom:5}}>
@@ -15,8 +32,8 @@ const Seats = ({navigation}) => {
             <Text style={Design.h2c}>User</Text>
         </View>
         <View>
-        <Text style={Design.regulartext}>31-05-2022</Text>
-        <Text style={Design.regulartext}>12:00PM</Text>
+        <Text style={Design.regulartext}>{currentDate}</Text>
+        <Text style={Design.regulartext}>{currentTime}</Text>
         </View>
         </View>
         <View style={{borderRadius:30,borderColor:'#D91C10',borderWidth:2,marginBottom:5,}}>
