@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
 import {Text, View,Image,TouchableOpacity,ScrollView} from 'react-native';
 import React,{useState,useEffect} from 'react';
 import Design from '../styles/Design';
@@ -6,23 +7,23 @@ import { Picker } from '@react-native-picker/picker';
 import { windowwidth } from '../styles/Dimentions';
 const Seats = ({navigation}) => {
     const [selectedLanguage, setSelectedLanguage] = useState();
-    const[currentTime,setCurrentTime]=useState('')
+    const [currentTime,setCurrentTime] = useState('');
     useEffect(()=>{
-        var hours=new Date().getHours()
-        var min=new Date().getMinutes()
+        var hours = new Date().getHours();
+        var min = new Date().getMinutes();
         setCurrentTime(
-            hours+':'+min
-        )
-    }, [])
-    const [currentDate, setCurrentDate]=useState('')
+            hours + ':' + min
+        );
+    }, []);
+    const [currentDate, setCurrentDate] = useState('');
     useEffect(()=>{
-        var date=new Date().getDate()
-        var month=new Date().getMonth()+1
-        var year=new Date().getFullYear()
+        var date = new Date().getDate();
+        var month = new Date().getMonth() + 1;
+        var year = new Date().getFullYear();
         setCurrentDate(
-            date+'-'+month+'-'+year
-        )
-    }, [])
+            date + '-' + month + '-' + year
+        );
+    }, []);
     return (
     <View style={Design.container2}>
       <Text style={Design.hotelname1}>Jumeirah Beach Hotel</Text>
@@ -36,7 +37,7 @@ const Seats = ({navigation}) => {
         <Text style={Design.regulartext}>{currentTime}</Text>
         </View>
         </View>
-        <View style={{borderRadius:30,borderColor:'#D91C10',borderWidth:2,marginBottom:5,}}>
+        <View style={{borderRadius:30,borderColor:'#D91C10',borderWidth:2,marginBottom:5}}>
         <Picker
           //ref={pickerRef}
           style={{width:windowwidth / 2}}
