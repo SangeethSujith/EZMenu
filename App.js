@@ -6,7 +6,7 @@ import Seats from './assets/screens/Seats';
 import Bookfood from './assets/screens/Bookfood';
 
 const Stack = createNativeStackNavigator();
-//React index
+
 const App = () => {
   return (
     <NavigationContainer>
