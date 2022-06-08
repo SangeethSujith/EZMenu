@@ -57,11 +57,19 @@ const Bookfood = () => {
                 <Text style={Design.ordertxt}>Add To Cart</Text>
                 <Image style={{height:28,width:28}} source={require('../images/cart.png')}/>
             </TouchableOpacity>
-            <Modal visible={open} animationType="fade">
-                <View>
-                    <TouchableOpacity onPress={()=>setOpen(false)}>
-                    <Text style={Design.h2c}>Modal Screen Here Please</Text>
-                    </TouchableOpacity>
+            <Modal transparent visible={open} animationType="fade">
+                <View style={Design.modalcontainer}>
+                    <View style={Design.modal}>
+                    <View style={Design.modalhead}>
+                        <Text style={Design.h1m}>Alert</Text>
+                    </View>
+                    <View style={Design.modalbtm}>
+                            <Text style={Design.h2c}>Your Order is about to be placed</Text>
+                            <TouchableOpacity style={Design.modalbutton} onPress={()=>setOpen(false)}>
+                            <Text style={Design.h2c}>Cancel</Text>
+                            </TouchableOpacity>
+                    </View>
+                    </View>
                 </View>
             </Modal>
             <TouchableOpacity style={Design.orderbtnright}>

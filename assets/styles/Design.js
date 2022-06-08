@@ -167,6 +167,47 @@ color:'#000',
     color:'#fff',
     fontSize:17,
   },
+  modalcontainer:{
+      flex:1,
+      width:'100%',
+      backgroundColor:'rgba(0,0,0,0.7)',
+    alignSelf:'center',
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  modal:{
+      width:'80%',
+      backgroundColor:'#fff',
+      alignItems:'center',
+      height:windowheight / 4,
+      borderRadius:20,
+  },
+  h1m: {
+    fontSize: 30,
+    fontFamily: 'poppinsmedium',
+    color: '#fff',
+    alignSelf:'center',
+    marginVertical:5,
+  },
+  modalhead:{
+    width:'100%',
+    backgroundColor:'#D91C10',
+    borderTopLeftRadius:20,
+    borderTopRightRadius:20,
+  },
+  modalbutton:{
+    borderWidth:2,
+    borderColor:'#D91C10',
+    borderRadius:15,
+    alignItems:'center',
+    paddingHorizontal:10,
+    paddingVertical:5,
+  },
+  modalbtm:{
+    flex:1,
+    alignItems:'center',
+  justifyContent:'space-evenly',
+},
 });
 
 export default Design;
