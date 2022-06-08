@@ -8,12 +8,14 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
+  Modal,
 } from 'react-native';
-import React from 'react';
+import React,{useState} from 'react';
 import Design from '../styles/Design';
 import {listdata} from '../other/Data';
 import Listitems from '../other/Listitems';
 const Bookfood = () => {
+    const [open,setOpen] = useState(false);
   return (
     <View style={Design.container2}>
       <Text style={Design.hotelname1c}>Jumeirah Beach Hotel</Text>
@@ -51,10 +53,17 @@ const Bookfood = () => {
           </View>
         </ScrollView>
         <View style={Design.orderbtn}>
-            <TouchableOpacity style={Design.orderbtnleft}>
+            <TouchableOpacity style={Design.orderbtnleft} onPress={()=>setOpen(true)}>
                 <Text style={Design.ordertxt}>Add To Cart</Text>
                 <Image style={{height:28,width:28}} source={require('../images/cart.png')}/>
             </TouchableOpacity>
+            <Modal visible={open} animationType="fade">
+                <View>
+                    <TouchableOpacity onPress={()=>setOpen(false)}>
+                    <Text style={Design.h2c}>Modal Screen Here Please</Text>
+                    </TouchableOpacity>
+                </View>
+            </Modal>
             <TouchableOpacity style={Design.orderbtnright}>
                 <Text style={Design.ordertxt}>View Cart</Text>
             </TouchableOpacity>
