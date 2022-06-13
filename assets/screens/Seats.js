@@ -1,10 +1,11 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
-import {Text, View,Image,TouchableOpacity,ScrollView} from 'react-native';
+import {Text, View,Image,FlatList,TouchableOpacity} from 'react-native';
 import React,{useState,useEffect} from 'react';
+import {seatdata} from '../other/Data';
 import Design from '../styles/Design';
 import { Picker } from '@react-native-picker/picker';
-import { windowwidth } from '../styles/Dimentions';
+import { windowheight, windowwidth } from '../styles/Dimentions';
 const Seats = ({navigation}) => {
     const [selectedLanguage, setSelectedLanguage] = useState();
     const [currentTime,setCurrentTime] = useState('');
@@ -25,7 +26,7 @@ const Seats = ({navigation}) => {
         );
     }, []);
     return (
-    <View style={Design.container2}>
+    <View style={Design.containernof}>
       <Text style={Design.hotelname1}>Jumeirah Beach Hotel</Text>
     <View style={{flexDirection:'row',justifyContent:'space-between',width:'80%',marginBottom:5}}>
         <View>
@@ -49,108 +50,26 @@ const Seats = ({navigation}) => {
           <Picker.Item label="Sunset View" value="sun" enabled/>
       </Picker>
       </View>
-<ScrollView showsVerticalScrollIndicator={false}>
-      <TouchableOpacity onPress={() => navigation.navigate('Bookfood')} style={{paddingTop:15}}>
-      <View style={Design.tableview}>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>1</Text>
+      <View style={{marginTop:15,height:windowheight/1.4}}>
+      <FlatList
+      scrollEnabled={true}
+      showsVerticalScrollIndicator={false}
+      horizontal={false}
+        numColumns={3}
+        keyExtractor={item => item.id}
+        data={seatdata}
+        renderItem={({item}) => (
+            <TouchableOpacity onPress={() => navigation.navigate('Bookfood')}>
+          <View style={Design.tableview}>
+            <View style={Design.singletable}>
+              <Image style={Design.tableimg} source={item.seat}/>
+              <Text>{item.id}</Text>
+            </View>
           </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>2</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>3</Text>
-          </View>
-      </View>
-      <View style={Design.tableview}>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>4</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>5</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>6</Text>
-          </View>
-      </View>
-      <View style={Design.tableview}>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>7</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>8</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableg.png')}/>
-          <Text>9</Text>
-          </View>
-      </View>
-      <View style={Design.tableview}>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>10</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>11</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>12</Text>
-          </View>
-      </View>
-      <View style={Design.tableview}>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableg.png')}/>
-          <Text>13</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>14</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>15</Text>
-          </View>
-      </View>
-      <View style={Design.tableview}>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>16</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableg.png')}/>
-          <Text>17</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>18</Text>
-          </View>
-      </View>
-      <View style={Design.tableview}>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>19</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>20</Text>
-          </View>
-          <View style={Design.singletable}>
-          <Image style={Design.tableimg} source={require('../images/tableo.png')}/>
-          <Text>21</Text>
-          </View>
-      </View>
-      </TouchableOpacity>
-      </ScrollView>
+          </TouchableOpacity>
+        )}
+      />
+    </View>
     </View>
   );
 };

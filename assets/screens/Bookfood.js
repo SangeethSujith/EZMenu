@@ -14,7 +14,7 @@ import React,{useState} from 'react';
 import Design from '../styles/Design';
 import {listdata} from '../other/Data';
 import Listitems from '../other/Listitems';
-const Bookfood = () => {
+const Bookfood = ({navigation}) => {
     const [open,setOpen] = useState(false);
   return (
     <View style={Design.container2}>
@@ -72,7 +72,7 @@ const Bookfood = () => {
                     </View>
                 </View>
             </Modal>
-            <TouchableOpacity style={Design.orderbtnright}>
+            <TouchableOpacity style={Design.orderbtnright} onPress={() => navigation.navigate('Login-')}>
                 <Text style={Design.ordertxt}>View Cart</Text>
             </TouchableOpacity>
         </View>

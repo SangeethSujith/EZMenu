@@ -84,6 +84,10 @@ color:'#000',
     alignItems:'center',
     paddingTop:45,
   },
+  containernof:{
+    alignItems:'center',
+    paddingTop:45,
+  },
   hotelname1:{
     fontSize: 20,
     fontFamily: 'poppinsmedium',
