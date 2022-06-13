@@ -1,9 +1,11 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import Login from './assets/screens/Login';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Seats from './assets/screens/Seats';
 import Bookfood from './assets/screens/Bookfood';
+import Customer from './assets/screens/Customer';
 
 const Stack = createNativeStackNavigator();
 //this is a test
@@ -25,6 +27,16 @@ const App = () => {
           name="Bookfood"
           component={Bookfood}
           options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Customer"
+          component={Customer}
+          options={{
+            headerShown: true,
+            title: 'Customer Details',
+            headerTitleAlign: 'center',
+            headerTitleStyle: {fontFamily: 'poppinsmedium', fontSize: 20},
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

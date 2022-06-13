@@ -66,14 +66,14 @@ const Bookfood = ({navigation}) => {
                     <View style={Design.modalbtm}>
                             <Text style={Design.h2c}>Your Order is about to be placed</Text>
                             <TouchableOpacity style={Design.modalbutton} onPress={()=>setOpen(false)}>
-                            <Text style={Design.h2c}>Cancel</Text>
+                            <Text style={Design.h2c}>Close</Text>
                             </TouchableOpacity>
                     </View>
                     </View>
                 </View>
             </Modal>
-            <TouchableOpacity style={Design.orderbtnright} onPress={() => navigation.navigate('Login-')}>
-                <Text style={Design.ordertxt}>View Cart</Text>
+            <TouchableOpacity style={Design.orderbtnright} onPress={() => navigation.navigate('Customer')}>
+                <Text style={Design.ordertxt}>View Details</Text>
             </TouchableOpacity>
         </View>
       </View>

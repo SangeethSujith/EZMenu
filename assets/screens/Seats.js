@@ -50,7 +50,7 @@ const Seats = ({navigation}) => {
           <Picker.Item label="Sunset View" value="sun" enabled/>
       </Picker>
       </View>
-      <View style={{marginTop:15,height:windowheight/1.4}}>
+      <View style={{marginTop:15,height:windowheight / 1.4}}>
       <FlatList
       scrollEnabled={true}
       showsVerticalScrollIndicator={false}
