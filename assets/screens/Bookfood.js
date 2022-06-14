@@ -54,7 +54,7 @@ const Bookfood = ({navigation}) => {
         </ScrollView>
         <View style={Design.orderbtn}>
             <TouchableOpacity style={Design.orderbtnleft} onPress={()=>setOpen(true)}>
-                <Text style={Design.ordertxt}>Add To Cart</Text>
+                <Text style={Design.btntxt}>Add To Cart</Text>
                 <Image style={{height:28,width:28}} source={require('../images/cart.png')}/>
             </TouchableOpacity>
             <Modal transparent visible={open} animationType="fade">
@@ -73,7 +73,7 @@ const Bookfood = ({navigation}) => {
                 </View>
             </Modal>
             <TouchableOpacity style={Design.orderbtnright} onPress={() => navigation.navigate('Customer')}>
-                <Text style={Design.ordertxt}>View Details</Text>
+                <Text style={Design.btntxt}>View Details</Text>
             </TouchableOpacity>
         </View>
       </View>

@@ -34,7 +34,7 @@ const Design = StyleSheet.create({
   },
   regulartext:{
 fontFamily:'poppinsregular',
-fontSize:15,
+fontSize:17,
 color:'#000',
   },
   h2c:{
@@ -187,11 +187,6 @@ color:'#000',
     alignSelf:'center',
     justifyContent:'center',
     backgroundColor:'#8E140C',
-  },
-  ordertxt:{
-    fontFamily:'poppinsregular',
-    color:'#fff',
-    fontSize:17,
   },
   modalcontainer:{
       flex:1,
