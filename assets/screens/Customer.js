@@ -4,12 +4,11 @@ import {Text, View, TextInput, TouchableOpacity} from 'react-native';
 import React,{useState} from 'react';
 import Design from '../styles/Design';
 import { Picker } from '@react-native-picker/picker';
-const Customer = () => {
+const Customer = ({navigation}) => {
     const [selectedLanguage, setSelectedLanguage] = useState();
   return (
     <View
       style={{
-        paddingTop: 20,
         backgroundColor: '#fff',
         flex: 1,
         justifyContent: 'space-evenly',
@@ -59,12 +58,12 @@ const Customer = () => {
       </Picker>
       </View>
       </View>
-      <View style={{flexDirection:'row'}}>
-      <TouchableOpacity>
-        <Text>Cancel</Text>
+      <View style={{flexDirection:'row',width:'75%',justifyContent:'space-between',alignSelf:'center'}}>
+      <TouchableOpacity onPress={()=>navigation.navigate('Bookfood')} style={{height:44,borderWidth:2,borderColor:'#d91c10',alignItems:'center',justifyContent:'center',borderRadius:20,width:'42%'}}>
+        <Text style={Design.regulartext}>Cancel</Text>
         </TouchableOpacity>
-      <TouchableOpacity>
-        <Text>Next</Text>
+      <TouchableOpacity style={{height:44,backgroundColor:'#d91c10',alignItems:'center',justifyContent:'center',borderRadius:20,width:'42%'}}>
+        <Text style={Design.btntxt}>Next</Text>
       </TouchableOpacity>
       </View>
     </View>
