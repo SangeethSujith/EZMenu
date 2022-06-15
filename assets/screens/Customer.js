@@ -15,7 +15,7 @@ const Customer = ({ navigation }) => {
             }}>
             <View>
                 <Text style={Design.h2}>Name</Text>
-                <TextInput style={Design.input} />
+                <TextInput style={Design.input}/>
             </View>
             <View>
                 <Text style={Design.h2}>Mobile</Text>
@@ -62,12 +62,11 @@ const Customer = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.navigate('Bookfood')} style={{ height: 44, borderWidth: 2, borderColor: '#d91c10', alignItems: 'center', justifyContent: 'center', borderRadius: 20, width: '42%' }}>
                     <Text style={Design.black}>Cancel</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={{ height: 44, backgroundColor: '#d91c10', alignItems: 'center', justifyContent: 'center', borderRadius: 20, width: '42%' }}>
+                <TouchableOpacity onPress={() => navigation.navigate('Orderdetails')} style={{ height: 44, backgroundColor: '#d91c10', alignItems: 'center', justifyContent: 'center', borderRadius: 20, width: '42%' }}>
                     <Text style={Design.white}>Next</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
 };
-
 export default Customer;

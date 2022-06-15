@@ -171,3 +171,18 @@ export const seatdata = [
         id: '21',
     },
 ];
+export const food = [
+{
+    title:'Black Forest',
+    no:'1',
+},
+{
+    title:'Brownie',
+    no:'2',
+},
+{
+    title:'Burger',
+    no:'4',
+},
+
+];

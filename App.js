@@ -6,6 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Seats from './assets/screens/Seats';
 import Bookfood from './assets/screens/Bookfood';
 import Customer from './assets/screens/Customer';
+import Orderdetails from './assets/screens/Orderdetails';
 
 const Stack = createNativeStackNavigator();
 //this is a test
@@ -34,6 +35,16 @@ const App = () => {
           options={{
             headerShown: true,
             title: 'Customer Details',
+            headerTitleAlign: 'center',
+            headerTitleStyle: {fontFamily: 'poppinsmedium', fontSize: 20},
+          }}
+        />
+        <Stack.Screen
+          name="Orderdetails"
+          component={Orderdetails}
+          options={{
+            headerShown: true,
+            title: 'Order Details',
             headerTitleAlign: 'center',
             headerTitleStyle: {fontFamily: 'poppinsmedium', fontSize: 20},
           }}
