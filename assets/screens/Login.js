@@ -29,8 +29,8 @@ const Login = ({ navigation }) => {
                         placeholder="User name"
                         placeholderTextColor="rgba(130,139,154,0.5)"
                     />
-                    <Image source={require('../images/tick.png')}/>
-                    </View>
+                    <Image source={require('../images/tick.png')} />
+                </View>
                 <Text style={Design.h2}>Password</Text>
                 <View style={Design.inputv}>
                     <TextInput style={Design.inpute}
@@ -45,7 +45,7 @@ const Login = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity style={Design.btn} onPress={() => navigation.navigate('Seats')}>
-                    <Text style={Design.btntxt}>Login</Text>
+                    <Text style={Design.white}>Login</Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
