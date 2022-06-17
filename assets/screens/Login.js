@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
 import { Text, View, StatusBar, SafeAreaView, TextInput, TouchableOpacity, Image } from 'react-native';
 import React, { useState } from 'react';
 import Design from '../styles/Design';
@@ -46,6 +47,9 @@ const Login = ({ navigation }) => {
                 </View>
                 <TouchableOpacity style={Design.btn} onPress={() => navigation.navigate('Seats')}>
                     <Text style={Design.white}>Login</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{alignSelf:'center',paddingTop:10}} onPress={()=>navigation.navigate('Waiter1')}>
+                <Text style={Design.black}>Waiter Login</Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
