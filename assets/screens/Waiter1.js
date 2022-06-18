@@ -25,7 +25,7 @@ const Waiter1 = ({navigation}) => {
           keyExtractor={item => item.id}
           data={seatdata}
           renderItem={({item}) => (
-            <TouchableOpacity onPress={() => navigation.navigate('Bookfood')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Waitermenu')}>
               <View style={Design.tableview}>
                 <View style={Design.singletable}>
                   <Image style={Design.tableimg} source={item.seat} />

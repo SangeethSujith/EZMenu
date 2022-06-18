@@ -8,6 +8,7 @@ import Bookfood from './assets/screens/Bookfood';
 import Customer from './assets/screens/Customer';
 import Orderdetails from './assets/screens/Orderdetails';
 import Waiter1 from './assets/screens/Waiter1';
+import Waitermenu from './assets/screens/Waitermenu';
 
 const Stack = createNativeStackNavigator();
 //this is a test
@@ -57,6 +58,11 @@ const App = () => {
           title: 'Table',
           headerTitleAlign: 'center',
           headerTitleStyle: {fontFamily: 'poppinsmedium', fontSize: 20}}}
+        />
+        <Stack.Screen
+          name="Waitermenu"
+          component={Waitermenu}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
