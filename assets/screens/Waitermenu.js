@@ -1,94 +1,106 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Image,
-  Modal,
+    View,
+    Text,
+    TouchableOpacity,
+    TextInput,
+    Image,
+    Modal,
+    FlatList,
 } from 'react-native';
 import Design from '../styles/Design';
-import {listdata} from '../other/Data';
-import Listitems from '../other/Listitems';
-import React, {useState} from 'react';
+import { listdata } from '../other/Data';
+import Waiterlist from '../other/Waiterlist'
+import React, { useState } from 'react';
+import { windowwidth } from '../styles/Dimentions';
 
-const Waitermenu = ({navigation}) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <View style={Design.container2}>
-      <Text style={Design.h2c}>Table 6</Text>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop: 10,
-          marginBottom: 15,
-        }}>
-        <TouchableOpacity style={Design.category}>
-          <Text style={Design.h2c}>All</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={Design.category}>
-          <Text style={Design.h2c}>Beverages</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={Design.category}>
-          <Text style={Design.h2c}>Snacks</Text>
-        </TouchableOpacity>
-      </View>
-      <TextInput style={Design.search} placeholder="Search Here" />
-      <View style={Design.listcontain}>
-        <ScrollView>
-          <View>
-            {listdata.map(item => (
-              <Listitems
-                key={item.id}
-                image={item.image}
-                title={item.title}
-                price={item.price}
-              />
-            ))}
-          </View>
-        </ScrollView>
-        <View style={Design.orderbtn}>
-          <TouchableOpacity
-            style={Design.orderbtnleft}
-            onPress={() => setOpen(true)}>
-            <Text style={Design.white}>Add To Cart</Text>
-            <Image
-              style={{height: 28, width: 28}}
-              source={require('../images/cart.png')}
-            />
-          </TouchableOpacity>
-          <Modal transparent visible={open} animationType="fade">
-            <View style={Design.modalcontainer}>
-              <View style={Design.modal}>
-                <View style={Design.modalhead}>
-                  <Text style={Design.h1m}>Alert</Text>
-                </View>
-                <View style={Design.modalbtm}>
-                  <Text style={Design.h2c}>
-                    Your Order is about to be placed
-                  </Text>
-                  <TouchableOpacity
-                    style={Design.modalbutton}
-                    onPress={() => setOpen(false)}>
-                    <Text style={Design.h2c}>Close</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
+const Waitermenu = ({ navigation }) => {
+    const [open, setOpen] = useState(false);
+    return (
+        <View style={Design.container2}>
+            <Text style={Design.black}>Table 6</Text>
+            <View
+                style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginTop: 10,
+                    marginBottom: 15,
+                }}>
+                <TouchableOpacity style={Design.category}>
+                    <Text style={Design.black}>All</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={Design.category}>
+                    <Text style={Design.black}>Beverages</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={Design.category}>
+                    <Text style={Design.black}>Snacks</Text>
+                </TouchableOpacity>
             </View>
-          </Modal>
-          <TouchableOpacity
-            style={Design.orderbtnright}
-            onPress={() => navigation.navigate('Customer')}>
-            <Text style={Design.white}>View Details</Text>
-          </TouchableOpacity>
+            <TextInput style={Design.search} placeholder="Search Here" />
+            <View style={Design.listcontain}>
+                <FlatList
+                    scrollEnabled={true}
+                    showsVerticalScrollIndicator={false}
+                    horizontal={false}
+                    keyExtractor={item => item.id}
+                    data={listdata}
+                    renderItem={({ item }) =>
+                    (
+                        <Waiterlist
+                            key={item.id}
+                            image={item.image}
+                            title={item.title}
+                            price={item.price}
+                        />
+                    )}
+                />
+            </View>
+            <View style={Design.orderbtn}>
+                <TouchableOpacity
+                    style={Design.orderbtnleft}
+                    onPress={() => setOpen(true)}>
+                    <Text style={Design.white}>Add Comments</Text>
+                    <Image
+                        style={{ height: 28, width: 28 }}
+                        source={require('../images/cart.png')}
+                    />
+                </TouchableOpacity>
+                <Modal transparent visible={open} animationType="fade">
+                    <View style={Design.modalcontainer}>
+                        <View style={Design.modal}>
+                            <View style={Design.modalhead}>
+                                <Text style={Design.h1m}>Add Comments</Text>
+                            </View>
+                            <View style={Design.modalbtm}>
+                                <TextInput style={{
+                                    width: windowwidth / 1.4,
+                                    backgroundColor: '#EAEAEA',
+                                    height: 100,
+                                    borderRadius: 20,
+                                    fontFamily: 'poppinsregular',
+                                    color: '#000',
+                                    fontSize: 17,
+                                    paddingHorizontal: 25,
+                                }} placeholder='Comments' />
+                                <TouchableOpacity
+                                    style={Design.modalbutton}
+                                    onPress={() => setOpen(false)}>
+                                    <Text style={Design.black}>Close</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </View>
+                </Modal>
+                <TouchableOpacity
+                    style={Design.orderbtnright}
+                    onPress={() => navigation.navigate('Customer')}>
+                    <Text style={Design.white}>View Details</Text>
+                </TouchableOpacity>
+            </View>
         </View>
-      </View>
-    </View>
-  );
+    );
 };
 
 export default Waitermenu;

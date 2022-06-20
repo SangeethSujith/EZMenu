@@ -13,12 +13,13 @@ import React, { useState } from 'react';
 import Design from '../styles/Design';
 import { listdata } from '../other/Data';
 import Listitems from '../other/Listitems';
+import { windowheight } from '../styles/Dimentions';
 const Bookfood = ({ navigation }) => {
     const [open, setOpen] = useState(false);
     return (
         <View style={Design.container2}>
             <Text style={Design.hotelname1c}>Jumeirah Beach Hotel</Text>
-            <Text style={Design.h2c}>Table 6</Text>
+            <Text style={Design.black}>Table 6</Text>
             <View
                 style={{
                     flexDirection: 'row',
@@ -28,13 +29,13 @@ const Bookfood = ({ navigation }) => {
                     marginBottom: 15,
                 }}>
                 <TouchableOpacity style={Design.category}>
-                    <Text style={Design.h2c}>All</Text>
+                    <Text style={Design.black}>All</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={Design.category}>
-                    <Text style={Design.h2c}>Beverages</Text>
+                    <Text style={Design.black}>Beverages</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={Design.category}>
-                    <Text style={Design.h2c}>Snacks</Text>
+                    <Text style={Design.black}>Snacks</Text>
                 </TouchableOpacity>
             </View>
             <TextInput style={Design.search} placeholder="Search Here" />
@@ -58,14 +59,19 @@ const Bookfood = ({ navigation }) => {
                     </TouchableOpacity>
                     <Modal transparent visible={open} animationType="fade">
                         <View style={Design.modalcontainer}>
-                            <View style={Design.modal}>
+                            <View style={{ 
+                            width: '80%',
+                            backgroundColor: '#fff',
+                            alignItems: 'center',
+                            height: windowheight / 4,
+                            borderRadius: 20,}}>
                                 <View style={Design.modalhead}>
                                     <Text style={Design.h1m}>Alert</Text>
                                 </View>
                                 <View style={Design.modalbtm}>
-                                    <Text style={Design.h2c}>Your Order is about to be placed</Text>
+                                    <Text style={Design.black}>Your Order is about to be placed</Text>
                                     <TouchableOpacity style={Design.modalbutton} onPress={() => setOpen(false)}>
-                                        <Text style={Design.h2c}>Close</Text>
+                                        <Text style={Design.black}>Close</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>

@@ -4,13 +4,13 @@ import {Text, View,FlatList,TouchableOpacity} from 'react-native';
 import React from 'react';
 import Design from '../styles/Design';
 import { food } from '../other/Data';
-import { windowheight, windowwidth } from '../styles/Dimentions';
+import { windowheight } from '../styles/Dimentions';
 const Orderdetails = ({navigation}) => {
   return (
     <View style={{
         backgroundColor: '#fff',
         flex: 1}}>
-      <View style={{marginTop:5,height:windowheight/1.26}}>
+      <View style={{marginTop:5,height:windowheight / 1.26}}>
         <FlatList
          scrollEnabled={true}
          showsVerticalScrollIndicator={false}

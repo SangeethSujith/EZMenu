@@ -31,7 +31,7 @@ const Seats = ({ navigation }) => {
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '80%', marginBottom: 5 }}>
                 <View>
                     <Text style={Design.black}>Welcome,</Text>
-                    <Text style={Design.h2c}>User</Text>
+                    <Text style={Design.black}>User</Text>
                 </View>
                 <View>
                     <Text style={Design.black}>{currentDate}</Text>

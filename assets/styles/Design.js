@@ -37,11 +37,6 @@ const Design = StyleSheet.create({
         fontSize: 17,
         color: '#000',
     },
-    h2c: {
-        fontFamily: 'poppinsregular',
-        color: '#000',
-        fontSize: 17,
-    },
     or: {
         fontFamily: 'poppinsmedium',
         color: '#000',
@@ -200,11 +195,11 @@ const Design = StyleSheet.create({
         width: '80%',
         backgroundColor: '#fff',
         alignItems: 'center',
-        height: windowheight / 4,
+        height: windowheight / 3,
         borderRadius: 20,
     },
     h1m: {
-        fontSize: 30,
+        fontSize: 23,
         fontFamily: 'poppinsmedium',
         color: '#fff',
         alignSelf: 'center',
@@ -225,7 +220,7 @@ const Design = StyleSheet.create({
         paddingVertical: 5,
     },
     modalbtm: {
-        flex: 1,
+        flex:1,
         alignItems: 'center',
         justifyContent: 'space-evenly',
     },
