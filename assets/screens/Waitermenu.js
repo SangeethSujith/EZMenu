@@ -8,10 +8,11 @@ import {
     Image,
     Modal,
     FlatList,
+    ScrollView,
 } from 'react-native';
 import Design from '../styles/Design';
 import { listdata } from '../other/Data';
-import Waiterlist from '../other/Waiterlist'
+import Waiterlist from '../other/Waiterlist';
 import React, { useState } from 'react';
 import { windowwidth } from '../styles/Dimentions';
 
@@ -27,7 +28,9 @@ const Waitermenu = ({ navigation }) => {
                     justifyContent: 'center',
                     marginTop: 10,
                     marginBottom: 15,
+                    marginHorizontal:15,
                 }}>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 <TouchableOpacity style={Design.category}>
                     <Text style={Design.black}>All</Text>
                 </TouchableOpacity>
@@ -37,6 +40,13 @@ const Waitermenu = ({ navigation }) => {
                 <TouchableOpacity style={Design.category}>
                     <Text style={Design.black}>Snacks</Text>
                 </TouchableOpacity>
+                <TouchableOpacity style={Design.category}>
+                    <Text style={Design.black}>Juice</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={Design.category}>
+                    <Text style={Design.black}>Arabian</Text>
+                </TouchableOpacity>
+                    </ScrollView>
             </View>
             <TextInput style={Design.search} placeholder="Search Here" />
             <View style={Design.listcontain}>
@@ -83,7 +93,7 @@ const Waitermenu = ({ navigation }) => {
                                     color: '#000',
                                     fontSize: 17,
                                     paddingHorizontal: 25,
-                                }} placeholder='Comments' />
+                                }} placeholder="Comments" />
                                 <TouchableOpacity
                                     style={Design.modalbutton}
                                     onPress={() => setOpen(false)}>

@@ -27,7 +27,7 @@ const Listitems = ({ image, title, price }) => {
                     <Text style={{ paddingBottom: 5, fontSize: 16, color: '#000', fontFamily: 'poppinsregular' }}>
                         {title}
                     </Text>
-                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center'}}>
                         <TouchableOpacity
                             onPress={() => setNumber(number - 1)}
                             style={{
@@ -38,7 +38,7 @@ const Listitems = ({ image, title, price }) => {
                                 alignItems: 'center',
                                 justifyContent: 'center',
                             }}>
-                            <Text style={{ fontFamily: 'poppinsmedium', fontSize: 18, color: '#000' }}>-</Text>
+                            <Text style={{ fontFamily: 'poppinsmedium', fontSize: 18, color: '#000'}}>-</Text>
                         </TouchableOpacity>
                         <Text style={{ marginHorizontal: 5, fontFamily: 'poppinsmedium', fontSize: 18, color: '#000' }}>{number}</Text>
                         <TouchableOpacity

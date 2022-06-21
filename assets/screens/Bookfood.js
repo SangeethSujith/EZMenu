@@ -27,7 +27,9 @@ const Bookfood = ({ navigation }) => {
                     justifyContent: 'center',
                     marginTop: 10,
                     marginBottom: 15,
+                    marginHorizontal:15,
                 }}>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 <TouchableOpacity style={Design.category}>
                     <Text style={Design.black}>All</Text>
                 </TouchableOpacity>
@@ -37,6 +39,13 @@ const Bookfood = ({ navigation }) => {
                 <TouchableOpacity style={Design.category}>
                     <Text style={Design.black}>Snacks</Text>
                 </TouchableOpacity>
+                <TouchableOpacity style={Design.category}>
+                    <Text style={Design.black}>Juice</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={Design.category}>
+                    <Text style={Design.black}>Arabian</Text>
+                </TouchableOpacity>
+                    </ScrollView>
             </View>
             <TextInput style={Design.search} placeholder="Search Here" />
             <View style={Design.listcontain}>
@@ -59,12 +68,12 @@ const Bookfood = ({ navigation }) => {
                     </TouchableOpacity>
                     <Modal transparent visible={open} animationType="fade">
                         <View style={Design.modalcontainer}>
-                            <View style={{ 
+                            <View style={{
                             width: '80%',
                             backgroundColor: '#fff',
                             alignItems: 'center',
                             height: windowheight / 4,
-                            borderRadius: 20,}}>
+                            borderRadius: 20}}>
                                 <View style={Design.modalhead}>
                                     <Text style={Design.h1m}>Alert</Text>
                                 </View>
