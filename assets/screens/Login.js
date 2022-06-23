@@ -35,7 +35,7 @@ const Login = ({ navigation }) => {
                 <Text style={Design.h2}>Password</Text>
                 <View style={Design.inputv}>
                     <TextInput style={Design.inpute}
-                        placeholder="Password"
+                        placeholder="* * * * * * * *"
                         secureTextEntry={visible}
                         placeholderTextColor="rgba(130,139,154,0.5)"
                     />

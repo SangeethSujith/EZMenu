@@ -7,16 +7,16 @@ const Design = StyleSheet.create({
         justifyContent: 'center',
     },
     tophalf: {
-        height: windowheight / 3,
-        paddingHorizontal: 30,
+        height: windowheight / 3.8,
+        paddingHorizontal:10,
         width: '100%',
         justifyContent: 'center',
     },
     bottomhalf: {
         height: windowheight / 3,
+        paddingHorizontal:10,
         width: '100%',
         justifyContent: 'center',
-        paddingHorizontal: 30,
     },
     h1: {
         fontSize: 30,
@@ -41,6 +41,7 @@ const Design = StyleSheet.create({
         fontFamily: 'poppinsmedium',
         color: '#000',
         fontSize: 17,
+        marginBottom:35,
         alignSelf: 'center',
     },
     inputv: {
