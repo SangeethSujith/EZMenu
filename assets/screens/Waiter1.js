@@ -2,10 +2,12 @@
 /* eslint-disable react-native/no-inline-styles */
 import {Text, View, Image, FlatList, TouchableOpacity} from 'react-native';
 import React from 'react';
+import { useState } from 'react';
 import {seatdata} from '../other/Data';
 import Design from '../styles/Design';
 import {windowheight} from '../styles/Dimentions';
 const Waiter1 = ({navigation}) => {
+    const [seatno,setseatno]=useState("");
   return (
     <View style={{backgroundColor:'#fff',flex:1,alignItems:'center',paddingTop:15}}>
       <Text style={Design.hotelname1}>Waiter Name</Text>
@@ -25,7 +27,7 @@ const Waiter1 = ({navigation}) => {
           keyExtractor={item => item.id}
           data={seatdata}
           renderItem={({item}) => (
-            <TouchableOpacity onPress={() => navigation.navigate('Waitermenu')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Bookfood',{seatno:item.id})}>
               <View style={Design.tableview}>
                 <View style={Design.singletable}>
                   <Image style={Design.tableimg} source={item.seat} />

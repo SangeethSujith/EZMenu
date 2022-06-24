@@ -9,17 +9,19 @@ import {
     Image,
     Modal,
 } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 import React, { useState } from 'react';
 import Design from '../styles/Design';
 import { listdata } from '../other/Data';
 import Listitems from '../other/Listitems';
 import { windowheight } from '../styles/Dimentions';
 const Bookfood = ({ navigation }) => {
+    const route=useRoute();
     const [open, setOpen] = useState(false);
     return (
         <View style={Design.container2}>
             <Text style={Design.hotelname1c}>Jumeirah Beach Hotel</Text>
-            <Text style={Design.black}>Table 6</Text>
+            <Text style={Design.black}>Table {route.params.seatno}</Text>
             <View
                 style={{
                     flexDirection: 'row',

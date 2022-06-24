@@ -7,6 +7,7 @@ import Design from '../styles/Design';
 import { Picker } from '@react-native-picker/picker';
 import { windowheight, windowwidth } from '../styles/Dimentions';
 const Seats = ({ navigation }) => {
+    const [seatno,setseatno]=useState("");
     const [selectedLanguage, setSelectedLanguage] = useState();
     const [currentTime, setCurrentTime] = useState('');
     useEffect(() => {
@@ -59,7 +60,7 @@ const Seats = ({ navigation }) => {
                     keyExtractor={item => item.id}
                     data={seatdata}
                     renderItem={({ item }) => (
-                        <TouchableOpacity onPress={() => navigation.navigate('Bookfood')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Bookfood',{seatno:item.id})}>
                             <View style={Design.tableview}>
                                 <View style={Design.singletable}>
                                     <Image style={Design.tableimg} source={item.seat} />
