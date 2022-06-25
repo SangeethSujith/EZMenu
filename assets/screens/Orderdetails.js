@@ -31,7 +31,7 @@ const Orderdetails = ({navigation}) => {
             alignSelf:'flex-end',
             flexWrap: 'wrap'}}>
          <View style={{ flexDirection: 'row', width: '75%', justifyContent: 'space-between', alignItems: 'center' }}>
-                <TouchableOpacity onPress={() => navigation.navigate('Customer')} style={{ height: 44, borderWidth: 2, borderColor: '#d91c10', alignItems: 'center', justifyContent: 'center', borderRadius: 20, width: '42%' }}>
+                <TouchableOpacity onPress={() => navigation.navigate('Seats')} style={{ height: 44, borderWidth: 2, borderColor: '#d91c10', alignItems: 'center', justifyContent: 'center', borderRadius: 20, width: '42%' }}>
                     <Text style={Design.black}>Edit</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Orderdetails')} style={{ height: 44, backgroundColor: '#d91c10', alignItems: 'center', justifyContent: 'center', borderRadius: 20, width: '42%' }}>
