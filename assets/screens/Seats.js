@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
 import { Text, View, Image, FlatList, TouchableOpacity } from 'react-native';
 import React, { useState, useEffect } from 'react';
@@ -7,7 +8,7 @@ import Design from '../styles/Design';
 import { Picker } from '@react-native-picker/picker';
 import { windowheight, windowwidth } from '../styles/Dimentions';
 const Seats = ({ navigation }) => {
-    const [seatno,setseatno]=useState("");
+    const [seatno,setseatno] = useState('');
     const [selectedLanguage, setSelectedLanguage] = useState();
     const [currentTime, setCurrentTime] = useState('');
     useEffect(() => {
@@ -62,10 +63,10 @@ const Seats = ({ navigation }) => {
                     renderItem={({ item }) => (
                         <TouchableOpacity onPress={() => navigation.navigate('Bookfood',{seatno:item.id})}>
                             <View style={Design.tableview}>
-                                <View style={Design.singletable}>
                                     <Image style={Design.tableimg} source={item.seat} />
-                                    <Text>{item.id}</Text>
-                                </View>
+                                    <View style={{position:'absolute',justifyContent:'center',alignItems:'center'}}>
+                                    <Text style={Design.black}>{item.id}</Text>
+                                    </View>
                             </View>
                         </TouchableOpacity>
                     )}

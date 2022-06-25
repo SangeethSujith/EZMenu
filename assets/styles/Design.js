@@ -119,8 +119,10 @@ const Design = StyleSheet.create({
         marginBottom: 5,
     },
     tableview: {
-        flexDirection: 'row',
-        marginBottom: 10,
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center',
+        marginBottom:20,
     },
     singletable: {
         alignItems: 'center',
