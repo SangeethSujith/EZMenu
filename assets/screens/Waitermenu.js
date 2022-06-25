@@ -18,7 +18,7 @@ import React, { useState } from 'react';
 import { windowwidth } from '../styles/Dimentions';
 
 const Waitermenu = ({ navigation }) => {
-    const route=useRoute();
+    const route = useRoute();
     const [open, setOpen] = useState(false);
     return (
         <View style={Design.container2}>

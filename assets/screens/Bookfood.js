@@ -16,7 +16,7 @@ import { listdata } from '../other/Data';
 import Listitems from '../other/Listitems';
 import { windowheight } from '../styles/Dimentions';
 const Bookfood = ({ navigation }) => {
-    const route=useRoute();
+    const route = useRoute();
     const [open, setOpen] = useState(false);
     return (
         <View style={Design.container2}>
