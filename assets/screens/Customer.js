@@ -4,7 +4,10 @@ import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import Design from '../styles/Design';
 import { Picker } from '@react-native-picker/picker';
+import { useRoute } from '@react-navigation/native';
 const Customer = ({ navigation }) => {
+    const route=useRoute();
+    const [seatno,setseatno]=useState(route.params.seatno);
     const [selectedLanguage, setSelectedLanguage] = useState();
     return (
         <View
@@ -59,7 +62,7 @@ const Customer = ({ navigation }) => {
                 </View>
             </View>
             <View style={{ flexDirection: 'row', width: '75%', justifyContent: 'space-between', alignSelf: 'center' }}>
-                <TouchableOpacity onPress={() => navigation.navigate('Bookfood')} style={{ height: 44, borderWidth: 2, borderColor: '#d91c10', alignItems: 'center', justifyContent: 'center', borderRadius: 20, width: '42%' }}>
+                <TouchableOpacity onPress={() => navigation.navigate('Bookfood',{seatno})} style={{ height: 44, borderWidth: 2, borderColor: '#d91c10', alignItems: 'center', justifyContent: 'center', borderRadius: 20, width: '42%' }}>
                     <Text style={Design.black}>Cancel</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Orderdetails')} style={{ height: 44, backgroundColor: '#d91c10', alignItems: 'center', justifyContent: 'center', borderRadius: 20, width: '42%' }}>

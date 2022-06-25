@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
 import {
     View,
@@ -19,6 +20,7 @@ import { windowwidth } from '../styles/Dimentions';
 
 const Waitermenu = ({ navigation }) => {
     const route = useRoute();
+    const [seatno,setseatno] = useState(route.params.seatno);
     const [open, setOpen] = useState(false);
     return (
         <View style={Design.container2}>
@@ -107,7 +109,7 @@ const Waitermenu = ({ navigation }) => {
                 </Modal>
                 <TouchableOpacity
                     style={Design.orderbtnright}
-                    onPress={() => navigation.navigate('Customer')}>
+                    onPress={() => navigation.navigate('Customer',{seatno})}>
                     <Text style={Design.white}>View Details</Text>
                 </TouchableOpacity>
             </View>

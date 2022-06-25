@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
 import {
     Text,
@@ -17,6 +18,7 @@ import Listitems from '../other/Listitems';
 import { windowheight } from '../styles/Dimentions';
 const Bookfood = ({ navigation }) => {
     const route = useRoute();
+    const [seatno,setseatno] = useState(route.params.seatno);
     const [open, setOpen] = useState(false);
     return (
         <View style={Design.container2}>
@@ -88,7 +90,7 @@ const Bookfood = ({ navigation }) => {
                             </View>
                         </View>
                     </Modal>
-                    <TouchableOpacity style={Design.orderbtnright} onPress={() => navigation.navigate('Customer')}>
+                    <TouchableOpacity style={Design.orderbtnright} onPress={() => navigation.navigate('Customer',{seatno})}>
                         <Text style={Design.white}>View Details</Text>
                     </TouchableOpacity>
                 </View>
