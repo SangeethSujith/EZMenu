@@ -9,7 +9,9 @@ import {
     ScrollView,
     Image,
     Modal,
+    FlatList,
 } from 'react-native';
+import { filter } from '../other/Data';
 import { useRoute } from '@react-navigation/native';
 import React, { useState } from 'react';
 import Design from '../styles/Design';
@@ -33,24 +35,20 @@ const Bookfood = ({ navigation }) => {
                     marginBottom: 15,
                     marginHorizontal:15,
                 }}>
-                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                <TouchableOpacity style={Design.category}>
-                    <Text style={Design.black}>All</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={Design.category}>
-                    <Text style={Design.black}>Beverages</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={Design.category}>
-                    <Text style={Design.black}>Snacks</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={Design.category}>
-                    <Text style={Design.black}>Juice</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={Design.category}>
-                    <Text style={Design.black}>Arabian</Text>
-                </TouchableOpacity>
-                    </ScrollView>
-            </View>
+            <FlatList
+                    scrollEnabled={true}
+                    showsHorizontalScrollIndicator={false}
+                    horizontal={true}
+                    keyExtractor={item => item.id}
+                    data={filter}
+                    renderItem={({ item }) =>
+                    (
+                        <TouchableOpacity style={Design.category}>
+                        <Text style={Design.black}>{item.cat}</Text>
+                    </TouchableOpacity>
+                    )}
+                />
+                </View>
             <TextInput style={Design.search} placeholder="Search Here" />
             <View style={Design.listcontain}>
                 <ScrollView>

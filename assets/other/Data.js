@@ -186,3 +186,25 @@ export const food = [
 },
 
 ];
+export const filter = [
+{
+    cat:'All',
+    id:'1',
+},
+{
+    cat:'Beverages',
+    id:'2',
+},
+{
+    cat:'Snacks',
+    id:'3',
+},
+{
+    cat:'Juice',
+    id:'4',
+},
+{
+    cat:'Arabian',
+    id:'5',
+},
+];
