@@ -22,6 +22,10 @@ const Bookfood = ({ navigation }) => {
     const route = useRoute();
     const [seatno,setseatno] = useState(route.params.seatno);
     const [open, setOpen] = useState(false);
+    const [touch, settouch] = useState('1');
+    const Switch = (id) =>{
+        settouch(id);
+    };
     return (
         <View style={Design.container2}>
             <Text style={Design.hotelname1c}>Jumeirah Beach Hotel</Text>
@@ -43,8 +47,8 @@ const Bookfood = ({ navigation }) => {
                     data={filter}
                     renderItem={({ item }) =>
                     (
-                        <TouchableOpacity style={Design.category}>
-                        <Text style={Design.black}>{item.cat}</Text>
+                        <TouchableOpacity onPress={()=>Switch(item.id)} style={[Design.category,{backgroundColor:touch === item.id ? '#D91C10' : '#fff'}]}>
+                    <Text style={[Design.black,{color:touch === item.id ? '#fff' : '#000'}]}>{item.cat}</Text>
                     </TouchableOpacity>
                     )}
                 />

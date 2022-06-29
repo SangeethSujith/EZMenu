@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
@@ -6,8 +7,8 @@ import Design from '../styles/Design';
 import { Picker } from '@react-native-picker/picker';
 import { useRoute } from '@react-navigation/native';
 const Customer = ({ navigation }) => {
-    const route=useRoute();
-    const [seatno,setseatno]=useState(route.params.seatno);
+    const route = useRoute();
+    const [seatno,setseatno] = useState(route.params.seatno);
     const [selectedLanguage, setSelectedLanguage] = useState();
     return (
         <View
