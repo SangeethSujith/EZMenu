@@ -26,6 +26,32 @@ const Waitermenu = ({ navigation }) => {
     const Switch = (id) =>{
         settouch(id);
     };
+    const [search,setSearch] = useState('');
+    const [filteredDataSource, setFilteredDataSource] = useState(listdata);
+  const [masterDataSource, setMasterDataSource] = useState(listdata);
+  const searchFilterFunction = (text) => {
+    // Check if searched text is not blank
+    if (text) {
+      // Inserted text is not blank
+      // Filter the masterDataSource
+      // Update FilteredDataSource
+      const newData = masterDataSource.filter(
+        function (item) {
+          const itemData = item.title
+            ? item.title.toUpperCase()
+            : ''.toUpperCase();
+          const textData = text.toUpperCase();
+          return itemData.indexOf(textData) > -1;
+      });
+      setFilteredDataSource(newData);
+      setSearch(text);
+    } else {
+      // Inserted text is blank
+      // Update FilteredDataSource with masterDataSource
+      setFilteredDataSource(masterDataSource);
+      setSearch(text);
+    }
+  };
     return (
         <View style={Design.container2}>
             <Text style={Design.black}>Table {route.params.seatno}</Text>
@@ -52,14 +78,16 @@ const Waitermenu = ({ navigation }) => {
                     )}
                 />
                 </View>
-            <TextInput style={Design.search} placeholder="Search Here" />
+            <TextInput style={Design.search}  onChangeText={(text) => searchFilterFunction(text)}
+        value={search}
+        returnKeyType = {'next'} placeholder="Search Here" />
             <View style={Design.listcontain}>
                 <FlatList
                     scrollEnabled={true}
                     showsVerticalScrollIndicator={false}
                     horizontal={false}
                     keyExtractor={item => item.id}
-                    data={listdata}
+                    data={filteredDataSource}
                     renderItem={({ item }) =>
                     (
                         <Waiterlist

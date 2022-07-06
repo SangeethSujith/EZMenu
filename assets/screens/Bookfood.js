@@ -26,6 +26,32 @@ const Bookfood = ({ navigation }) => {
     const Switch = (id) =>{
         settouch(id);
     };
+    const [search,setSearch] = useState('');
+    const [filteredDataSource, setFilteredDataSource] = useState(listdata);
+  const [masterDataSource, setMasterDataSource] = useState(listdata);
+  const searchFilterFunction = (text) => {
+    // Check if searched text is not blank
+    if (text) {
+      // Inserted text is not blank
+      // Filter the masterDataSource
+      // Update FilteredDataSource
+      const newData = masterDataSource.filter(
+        function (item) {
+          const itemData = item.title
+            ? item.title.toUpperCase()
+            : ''.toUpperCase();
+          const textData = text.toUpperCase();
+          return itemData.indexOf(textData) > -1;
+      });
+      setFilteredDataSource(newData);
+      setSearch(text);
+    } else {
+      // Inserted text is blank
+      // Update FilteredDataSource with masterDataSource
+      setFilteredDataSource(masterDataSource);
+      setSearch(text);
+    }
+  };
     return (
         <View style={Design.container2}>
             <Text style={Design.hotelname1c}>Jumeirah Beach Hotel</Text>
@@ -53,11 +79,16 @@ const Bookfood = ({ navigation }) => {
                     )}
                 />
                 </View>
-            <TextInput style={Design.search} placeholder="Search Here" />
+            <TextInput style={Design.search} autoCapitalize="none"
+        autoCorrect={false}
+        onChangeText={(text) => searchFilterFunction(text)}
+        value={search}
+        returnKeyType = {'next'}
+        status="info" placeholder="Search Here" />
             <View style={Design.listcontain}>
                 <ScrollView>
                     <View>
-                        {listdata.map(item => (
+                        {filteredDataSource.map(item => (
                             <Listitems
                                 key={item.id}
                                 image={item.image}
