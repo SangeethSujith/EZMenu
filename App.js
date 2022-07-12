@@ -11,7 +11,6 @@ import Waiter1 from './assets/screens/Waiter1';
 import Waitermenu from './assets/screens/Waitermenu';
 
 const Stack = createNativeStackNavigator();
-//this is a test
 const App = () => {
   return (
     <NavigationContainer>
